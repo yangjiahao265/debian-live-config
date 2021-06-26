@@ -109,13 +109,13 @@ vokoscreen
 qwinff
 ffmpeg
 flac
+gstreamer1.0-pipewire
 gstreamer1.0-alsa
 gstreamer1.0-libav
 gstreamer1.0-plugins-bad
 gstreamer1.0-plugins-base
 gstreamer1.0-plugins-good
 gstreamer1.0-plugins-ugly
-gstreamer1.0-pulseaudio
 gstreamer1.0-tools
 gstreamer1.0-x
 lame
@@ -139,6 +139,7 @@ media-player-info
 #Alt: minidisc-utils
 #Alt: mat
 #Alt: ffmpegfs
+#Alt: gstreamer1.0-pulseaudio
 
 
 #Section: Audio CD extraction
@@ -169,14 +170,14 @@ gnome-sound-recorder
 
 
 #Section: Audio system
-#Description: pulseaudio
-pavucontrol
-pulseaudio
-pulseaudio-utils
-pulseaudio-module-bluetooth
-pulseaudio-module-lirc
+pipewire
+#Alt: pavucontrol
+#Alt: pulseaudio
+#Alt: pulseaudio-utils
+#Alt: pulseaudio-module-bluetooth
+#Alt: pulseaudio-module-lirc
 #Alt: pulseaudio-module-zeroconf
-pulseaudio-module-jack
+#Alt: pulseaudio-module-jack
 kmod
 alsa-oss
 alsa-tools
