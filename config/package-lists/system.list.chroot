@@ -266,7 +266,10 @@ xserver-xorg-video-all
 xserver-xorg-video-intel
 xfonts-base
 hwdata
+
+# Nvidia graphics drivers
 nvidia-driver
+nvidia-persistenced
 
 #Section: Kernel/boot/init
 #if ARCHITECTURES amd64
