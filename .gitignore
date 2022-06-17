@@ -1,2 +1,8 @@
 .venv/
 doc/html/
+.build
+cache
+chroot
+.lock
+build.log
+
