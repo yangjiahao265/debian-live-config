@@ -4,6 +4,7 @@
 mirror=https://mirrors.tuna.tsinghua.edu.cn
 
 lb config noauto \
+--apt-http-proxy http://192.168.3.144:7890
 --apt-recommends false \
 --apt-indices false \
 --architectures amd64 \
