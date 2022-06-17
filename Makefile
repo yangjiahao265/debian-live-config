@@ -27,7 +27,7 @@ bump_version:
 
 build:
 	# Build the live system/ISO image
-	sudo lb clean --all
+	# sudo lb clean --all
 	sudo lb config
 	sudo lb build
 
