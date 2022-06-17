@@ -6,7 +6,7 @@ LAST_TAG := $(shell git describe --tags --abbrev=0)
 LIBVIRT_STORAGE_PATH := /var/lib/libvirt/images/
 
 # remove 'download_extra' to build without third party software/dotfiles
-all: install_buildenv download_extra build
+all: install_buildenv build # download_extra
 
 download_extra:
 	make -f Makefile.extra
