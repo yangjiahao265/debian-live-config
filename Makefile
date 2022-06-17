@@ -17,6 +17,10 @@ install_buildenv:
 
 ##############################
 
+clean-bin:
+	sudo rm -rf ./binary.deb
+	sudo rm -rf ./binary.udeb
+
 # clear all caches, only required when changing the mirrors/architecture config
 clean:
 	sudo lb clean --all

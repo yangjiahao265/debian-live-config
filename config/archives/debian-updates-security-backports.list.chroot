@@ -1,1 +1,1 @@
-deb https://mirrors.tuna.tsinghua.edu.cn/debian/ bullseye-proposed-updates main contrib non-free
+deb http://mirrors.aliyun.com/debian bullseye-proposed-updates main contrib non-free
