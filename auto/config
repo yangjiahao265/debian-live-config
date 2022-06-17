@@ -2,9 +2,9 @@
 # live-build configuration script
 # see 'man lb config'
 mirror=https://mirrors.tuna.tsinghua.edu.cn
+# --apt-http-proxy http://192.168.3.144:7890 \
 
 lb config noauto \
---apt-http-proxy http://192.168.3.144:7890 \
 --apt-recommends false \
 --apt-secure false \
 --apt-indices false \
@@ -33,13 +33,13 @@ lb config noauto \
 --bootappend-live "boot=live config splash" \
 --memtest memtest86+ \
 --win32-loader true \
+--verbose true \
+--zsync true \
 --mirror-binary $mirror/debian/ \
 --mirror-binary-security $mirror/debian-security/ \
 --mirror-bootstrap $mirror/debian/ \
 --mirror-chroot $mirror/debian/ \
 --mirror-chroot-security $mirror/debian-security/ \
---mirror-debian-installer $mirror/debian/ \
---verbose true \
---zsync true
+--mirror-debian-installer $mirror/debian/
 
 "${@}"
