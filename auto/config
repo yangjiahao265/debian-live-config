@@ -2,9 +2,9 @@
 # live-build configuration script
 # see 'man lb config'
 mirror=http://mirrors.aliyun.com
+# --apt-http-proxy http://192.168.3.144:7890 \
 
 lb config noauto \
---apt-http-proxy http://192.168.3.144:7890 \
 --apt-recommends false \
 --apt-secure false \
 --apt-indices false \
