@@ -34,7 +34,7 @@ lb config noauto \
 --memtest memtest86+ \
 --win32-loader true \
 --verbose true \
---zsync true \
+--zsync false \
 --mirror-binary $mirror/debian \
 --mirror-binary-security $mirror/debian-security \
 --mirror-bootstrap $mirror/debian \

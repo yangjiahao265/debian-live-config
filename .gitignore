@@ -48,3 +48,10 @@ config/hooks/normal/0500-reproducible-glibc.hook.chroot
 binary.modified_timestamps
 
 live-image-amd64.*
+
+*.log
+.vscode/*.log
+
+chroot.installed_tmp_pkgs
+
+chroot.tmp
