@@ -20,7 +20,7 @@ download_extra: # clean
 	mkdir -p cache/downloads/ config/packages.chroot/
 
 	$(WGET) https://desktop.docker.com/linux/main/amd64/docker-desktop-4.9.1-amd64.deb
-	cp cache/downloads/docker-desktop-4.9.1-amd64.deb config/packages.chroot/
+	cp cache/downloads/docker-desktop-4.9.1-amd64.deb config/packages.chroot/docker-desktop_4.9.1_amd64.deb
 
 	# EXTRA https://github.com/az0/cleanerml
 	# $(WGET) https://nodiscc.gitlab.io/toolbox/pool/main/b/bleachbit-cleanerml/bleachbit-cleanerml_0.0.1~git0+5bc2961_all.deb
