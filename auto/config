@@ -1,7 +1,7 @@
 #!/bin/sh
 # live-build configuration script
 # see 'man lb config'
-mirror=http://ftp.cn.debian.org
+mirror=http://ipv4.mirrors.ustc.edu.cn
 # --apt-http-proxy http://192.168.3.144:7890 \
 
 lb config noauto \

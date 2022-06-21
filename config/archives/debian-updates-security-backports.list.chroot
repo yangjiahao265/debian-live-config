@@ -1,1 +1,1 @@
-deb http://ftp.cn.debian.org/debian bullseye-proposed-updates main contrib non-free
+deb http://ipv4.mirrors.ustc.edu.cn/debian bullseye-proposed-updates main contrib non-free
