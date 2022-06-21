@@ -1,1 +1,1 @@
-deb http://mirrors.aliyun.com/debian bullseye-proposed-updates main contrib non-free
+deb http://ftp.cn.debian.org/debian bullseye-proposed-updates main contrib non-free
