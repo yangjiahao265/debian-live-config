@@ -9,16 +9,16 @@ aptitude
 debconf-utils
 debian-archive-keyring
 debian-keyring
-debsecan
-debsums
-gnome-packagekit
-packagekit
-packagekit-tools
+#Alt: debsecan
+#Alt: debsums
+#Alt: gnome-packagekit
+#Alt: packagekit
+#Alt: packagekit-tools
 #Alt: reportbug
-software-properties-gtk
-synaptic
+#Alt: software-properties-gtk
+#Alt: synaptic
 unattended-upgrades
-vrms
+#Alt: vrms
 #Alt: appstream-generator
 #Alt: apt-config-auto-update
 #Alt: apt-file
@@ -39,14 +39,14 @@ vrms
 #Section: Task management/monitoring
 #Description: xfce4-taskmanager
 #Alt: xfce4-taskmanager
-htop
+#Alt: htop
 iotop
-lm-sensors
-hddtemp
-inxi
+#Alt: lm-sensors
+#Alt: hddtemp
+#Alt: inxi
 lsof
 strace
-memtest86+
+#Alt: memtest86+
 #Alt: gnome-system-monitor
 #Alt: screenfetch
 #screentest # bookworm only
@@ -73,7 +73,7 @@ memtest86+
 #Section: Backup
 #Screenshot: deja-dup
 #Description: deja-dup
-deja-dup
+#Alt: deja-dup
 #Alt: backintime-qt4
 #Alt: tmfs
 #Alt: duplicity
@@ -93,22 +93,22 @@ deja-dup
 #Description: gnome-disk-utility
 #Description: gparted
 #Description: baobab
-gnome-disk-utility
-gparted
-baobab
-ncdu
-dfc
-smartmontools
-mtools
-gdisk
-parted
-hdparm
-sdparm
-dosfstools
-hfsprogs
-ntfs-3g
-kpartx
-xorriso
+#Alt: gnome-disk-utility
+#Alt: gparted
+#Alt: baobab
+#Alt: ncdu
+#Alt: dfc
+#Alt: smartmontools
+#Alt: mtools
+#Alt: gdisk
+#Alt: parted
+#Alt: hdparm
+#Alt: sdparm
+#Alt: dosfstools
+#Alt: hfsprogs
+#Alt: ntfs-3g
+#Alt: kpartx
+#Alt: xorriso
 lvm2
 #Alt: gsmartcontrol
 #Alt: fsarchiver
@@ -142,16 +142,16 @@ testdisk
 #Section: File cleaners/linters
 #Description: bleachbit
 #Alt: bleachbit
-localepurge
+#Alt: localepurge
 #fslint # buster only
 
 #Section: Log viewers
 #Description: gnome-system-log
 #Screenshot: gnome-system-log
 #Screenshot: lnav
-gnome-system-log
-lnav
-colortail
+#Alt: gnome-system-log
+#Alt: lnav
+#Alt: colortail
 #Alt: gnome-logs
 #Alt: glogg
 #Alt: logtop
@@ -281,7 +281,7 @@ linux-headers-686:i386
 #endif
 module-assistant
 dkms
-build-essential
+#Alt: build-essential
 systemd
 os-prober
 initramfs-tools

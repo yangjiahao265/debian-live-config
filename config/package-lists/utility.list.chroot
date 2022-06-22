@@ -2,24 +2,24 @@
 
 #Section: File management
 #Description: thunar
-gvfs-backends
-gvfs-bin
-gvfs-fuse
-jdupes
-libgphoto2-l10n
-libmtp-runtime
-mlocate
-ooo-thumbnailer
+#Alt: gvfs-backends
+#Alt: gvfs-bin
+#Alt: gvfs-fuse
+#Alt: jdupes
+#Alt: libgphoto2-l10n
+#Alt: libmtp-runtime
+#Alt: mlocate
+#Alt: ooo-thumbnailer
 rename
 secure-delete
-thunar
-thunar-archive-plugin
-thunar-media-tags-plugin
-thunar-volman
-trash-cli
+#Alt: thunar
+#Alt: thunar-archive-plugin
+#Alt: thunar-media-tags-plugin
+#Alt: thunar-volman
+#Alt: trash-cli
 tree
-tumbler
-catfish
+#Alt: tumbler
+#Alt: catfish
 #Alt: pcmanfm
 #Alt: gprename
 #Alt: thunar-gtkhash
@@ -135,9 +135,9 @@ libblockdev-crypto2
 #Section: Text editors
 #Description: mousepad
 #Description: nano
-mousepad
+#Alt: mousepad
 nano
-vim-tiny
+#Alt: vim-tiny
 #Alt: gnome-builder flatpak-builder python3-lxml python3-jedi
 vim
 #Alt: vim-doc
@@ -180,8 +180,8 @@ vim
 
 #Section: Clocks/timers
 #Description: gnome-clocks
-gnome-clocks
-tty-clock
+#Alt: gnome-clocks
+#Alt: tty-clock
 #Alt: dclock
 #Alt: gtimer
 #Alt: stopwatch
@@ -219,7 +219,7 @@ gnome-terminal
 
 #Section: Color management
 #Description: redshift-gtk
-redshift-gtk
+#Alt: redshift-gtk
 #Alt: workrave
 #Alt: safeeyes
 
@@ -246,20 +246,20 @@ dconf-gsettings-backend
 #Description: xfce4-power-manager
 # xfce4-power-manager
 # xfce4-battery-plugin
-radeontool
-bumblebee
-vbetool
-powertop
-usbutils
+#Alt: radeontool
+#Alt: bumblebee
+#Alt: vbetool
+#Alt: powertop
+#Alt: usbutils
 acpi
 acpi-support
 acpi-support-base
-laptop-mode-tools
-fancontrol
-rfkill
-cpufrequtils
+#Alt: laptop-mode-tools
+#Alt: fancontrol
+#Alt: rfkill
+#Alt: cpufrequtils
 #hibernate # buster only
-pm-utils
+#Alt: pm-utils
 #Alt: powerdebug
 #Alt: tlp
 #Alt: powerstat
@@ -270,8 +270,8 @@ pm-utils
 #eeepc-acpi-scripts #sid only
 
 #Section: Character map/font viewer
-gucharmap
-gnome-font-viewer
+#Alt: gucharmap
+#Alt: gnome-font-viewer
 #Alt: font-manager
 #Alt: thunar-font-manager
 
@@ -298,8 +298,8 @@ papirus-icon-theme
 arc-theme
 gnome-themes-standard
 sound-theme-freedesktop
-gnome-audio
-qt5-gtk-platformtheme
+#Alt: gnome-audio
+#Alt: qt5-gtk-platformtheme
 #Alt: faenza-icon-theme
 #Alt: deepin-icon-theme
 #Alt: paper-icon-theme
