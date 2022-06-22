@@ -14,7 +14,7 @@ debsums
 gnome-packagekit
 packagekit
 packagekit-tools
-reportbug
+#Alt: reportbug
 software-properties-gtk
 synaptic
 unattended-upgrades
@@ -38,7 +38,7 @@ vrms
 
 #Section: Task management/monitoring
 #Description: xfce4-taskmanager
-xfce4-taskmanager
+#Alt: xfce4-taskmanager
 htop
 iotop
 lm-sensors
@@ -141,7 +141,7 @@ testdisk
 
 #Section: File cleaners/linters
 #Description: bleachbit
-bleachbit
+#Alt: bleachbit
 localepurge
 #fslint # buster only
 
@@ -161,22 +161,22 @@ colortail
 
 #Section: Virtualization
 #Description: virt-manager
-virt-manager
-virtinst
-virt-viewer
-ebtables
-dnsmasq-base
-libvirt-daemon-system
-gir1.2-spiceclientgtk-3.0
-qemu-system-x86
-qemu-system-arm
-qemu-utils
-libguestfs-tools
-virt-p2v
-libguestfs-rsync
-libguestfs-rescue
+#Alt: virt-manager
+#Alt: virtinst
+#Alt: virt-viewer
+#Alt: ebtables
+#Alt: dnsmasq-base
+#Alt: libvirt-daemon-system
+#Alt: gir1.2-spiceclientgtk-3.0
+#Alt: qemu-system-x86
+#Alt: qemu-system-arm
+#Alt: qemu-utils
+#Alt: libguestfs-tools
+#Alt: virt-p2v
+#Alt: libguestfs-rsync
+#Alt: libguestfs-rescue
 #virt-top # buster only
-netcat-openbsd
+#Alt: netcat-openbsd
 #Alt: virt-p2v
 #Alt: virt-what
 #Alt: libguestfs-tools
@@ -196,7 +196,7 @@ netcat-openbsd
 #Alt: ansible
 
 #Section: Java
-default-jre
+#Alt: default-jre
 
 #Section: Display manager/screen locker
 #Description: lightdm
@@ -270,7 +270,7 @@ xserver-xorg-video-all
 xserver-xorg-video-intel
 xfonts-base
 hwdata
-nvidia-driver
+#Alt: nvidia-driver
 
 #Section: Kernel/boot/init
 #if ARCHITECTURES amd64

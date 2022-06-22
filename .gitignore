@@ -10,7 +10,7 @@ binary
 binary.deb
 binary.udeb
 
-config/package-lists
+# config/package-lists
 config/packages.chroot
 config/bootstrap
 config/common
@@ -55,3 +55,5 @@ live-image-amd64.*
 chroot.installed_tmp_pkgs
 
 chroot.tmp
+
+# !config/package-lists/network.list.chroot

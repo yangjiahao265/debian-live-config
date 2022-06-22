@@ -53,7 +53,7 @@ manpages-dev
 #Alt: pv
 #Alt: reptyr
 #Alt: source-highlight
-#Alt: tmux
+tmux
 #Alt: ttyrec
 #Alt: fasd
 #Alt: pdd
