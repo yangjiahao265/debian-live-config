@@ -1,171 +1,123 @@
-# This is the ssh server system-wide configuration file.
-# See sshd_config(5) for more information on any settings used. Comments will be added only to clarify why a configuration was chosen.
-#
-# Created for OpenSSH v5.9
+#	$OpenBSD: sshd_config,v 1.103 2018/04/09 20:41:22 tj Exp $
 
-# Basic configuration
-# ===================
+# This is the sshd server system-wide configuration file.  See
+# sshd_config(5) for more information.
 
-# Disable root login
-PermitRootLogin no
+# This sshd was compiled with PATH=/usr/bin:/bin:/usr/sbin:/sbin
 
-# Define which port sshd should listen to.
+# The strategy used for options in the default sshd_config shipped with
+# OpenSSH is to specify options with their default value where
+# possible, but leave them commented.  Uncommented options override the
+# default value.
+
+Include /etc/ssh/sshd_config.d/*.conf
+
 Port 22
-
-# Address family should always be limited to the active network configuration.
-AddressFamily inet
-
-# Define which addresses sshd should listen to. Default to `0.0.0.0`, ie make sure you put your desired address in here, since otherwise sshd will listen to everyone.
+#AddressFamily any
 ListenAddress 0.0.0.0
+#ListenAddress ::
 
-# List HostKeys here.
-HostKey /etc/ssh/ssh_host_rsa_key
-HostKey /etc/ssh/ssh_host_ecdsa_key
+#HostKey /etc/ssh/ssh_host_rsa_key
+#HostKey /etc/ssh/ssh_host_ecdsa_key
+#HostKey /etc/ssh/ssh_host_ed25519_key
 
-# Security configuration
-# ======================
+# Ciphers and keying
+#RekeyLimit default none
 
-# Set the protocol version to 2 for security reasons. Disables legacy support.
-Protocol 2
+# Logging
+#SyslogFacility AUTH
+#LogLevel INFO
 
-# Make sure sshd checks file modes and ownership before accepting logins. This prevents accidental misconfiguration.
-StrictModes yes
+# Authentication:
 
-# Logging, obsoletes QuietMode and FascistLogging
-SyslogFacility AUTH
-LogLevel INFO
+#LoginGraceTime 2m
+PermitRootLogin yes
+#StrictModes yes
+#MaxAuthTries 6
+#MaxSessions 10
 
-# Cryptography
-# ------------
+#PubkeyAuthentication yes
 
-# **Ciphers**
-Ciphers aes256-ctr,aes192-ctr,aes128-ctr
+# Expect .ssh/authorized_keys2 to be disregarded by default in future.
+#AuthorizedKeysFile	.ssh/authorized_keys .ssh/authorized_keys2
 
-# **Hash algorithms**
-MACs hmac-sha2-512-etm@openssh.com,hmac-sha2-256-etm@openssh.com,umac-128-etm@openssh.com,hmac-sha2-512,hmac-sha2-256
+#AuthorizedPrincipalsFile none
 
+#AuthorizedKeysCommand none
+#AuthorizedKeysCommandUser nobody
 
-# **Key Exchange Algorithms**
-KexAlgorithms diffie-hellman-group-exchange-sha256
+# For this to work you will also need host keys in /etc/ssh/ssh_known_hosts
+#HostbasedAuthentication no
+# Change to yes if you don't trust ~/.ssh/known_hosts for
+# HostbasedAuthentication
+#IgnoreUserKnownHosts no
+# Don't read the user's ~/.rhosts and ~/.shosts files
+#IgnoreRhosts yes
 
-# Authentication
-# --------------
-
-# Don't process environment variables passed by the client
-PermitUserEnvironment no
-LoginGraceTime 30s
-# Only process the client's locale environment variables
-AcceptEnv LANG LC_*
-
-# Specifies  the  maximum  number  of authentication attempts permitted per connection.
-# Once the number of failures reaches half this value, additional failures are logged.
-# Causes 'Too Many Authentication Failures' error when set to a low value and the user tries several keys.
-MaxAuthTries 5
-MaxSessions 10
-MaxStartups 10:30:100
-
-# Enable public key authentication
-PubkeyAuthentication yes
-
-# Reject keys that are explicitly blacklisted
-RevokedKeys /etc/ssh/revoked_keys
-
-# Never use host-based authentication. It can be exploited.
-IgnoreRhosts yes
-IgnoreUserKnownHosts yes
-HostbasedAuthentication no
-
-# Enable PAM to enforce system wide rules
-UsePAM no
-
-# Disable password-based authentication, it can allow for potentially easier brute-force attacks.
-PasswordAuthentication no
+# To disable tunneled clear text passwords, change to no here!
+PasswordAuthentication yes
 PermitEmptyPasswords no
+
+# Change to yes to enable challenge-response passwords (beware issues with
+# some PAM modules and threads)
 ChallengeResponseAuthentication no
 
-# Only enable Kerberos authentication if it is configured.
-KerberosAuthentication no
-KerberosOrLocalPasswd no
-KerberosTicketCleanup yes
+# Kerberos options
+#KerberosAuthentication no
+#KerberosOrLocalPasswd yes
+#KerberosTicketCleanup yes
 #KerberosGetAFSToken no
 
-# Only enable GSSAPI authentication if it is configured.
-GSSAPIAuthentication no
-GSSAPICleanupCredentials yes
+# GSSAPI options
+#GSSAPIAuthentication no
+#GSSAPICleanupCredentials yes
+#GSSAPIStrictAcceptorCheck yes
+#GSSAPIKeyExchange no
 
-# Network
-# -------
+# Set this to 'yes' to enable PAM authentication, account processing,
+# and session processing. If this is enabled, PAM authentication will
+# be allowed through the ChallengeResponseAuthentication and
+# PasswordAuthentication.  Depending on your PAM configuration,
+# PAM authentication via ChallengeResponseAuthentication may bypass
+# the setting of "PermitRootLogin without-password".
+# If you just want the PAM account and session checks to run without
+# PAM authentication, then enable this but set PasswordAuthentication
+# and ChallengeResponseAuthentication to 'no'.
+UsePAM yes
 
-# Disable TCP keep alive since it is spoofable. Use ClientAlive messages instead, they use the encrypted channel
-TCPKeepAlive no
-
-# Manage `ClientAlive..` signals via interval and maximum count. This will periodically check up to a `..CountMax` number of times within `..Interval` timeframe, and abort the connection once these fail.
-ClientAliveInterval 600
-ClientAliveCountMax 3
-
-# Disable tunneling
-PermitTunnel no
-
-# Specifies whether TCP forwarding is permitted.
-# Denying it provides no real advantage unless shell access is also denied
-AllowTcpForwarding no
-
-# Disable agent forwarding, since local agent could be accessed through forwarded connection.
-# no real advantage without denied shell access
-AllowAgentForwarding no
-
-# Do not allow remote port forwardings to bind to non-loopback addresses.
-GatewayPorts no
-
-# Disable X11 forwarding, since local X11 display could be accessed through forwarded connection.
-X11Forwarding no
-X11UseLocalhost yes
-
-# Only allow login for users from ssh/sftponly groups
-AllowGroups ssh sftponly
-
-# Misc. configuration
-# ===================
-
-# Disable motd
-PrintMotd no
-
-# Disable printing last connections on login
-PrintLastLog no
-
-# file to send to the remote user before authentication
-Banner none
-
-#UseDNS yes
-#PidFile /var/run/sshd.pid
-#MaxStartups 10
-
-# Enable compression
-Compression yes
-
-# Use reverse DNS lookups to validate authorized clients
-# This allows using hostnames in auhtorized_keys instead of IP addresses
-# The default is no
-#UseDNS no
-
-# print /etc/motd when a user logs in interactively
-PrintMotd yes
-
-# print the date and time of the last user login when a user logs in interactively
-PrintLastLog yes
-
-# SFTP configuration
-Subsystem sftp internal-sftp -l {{ ssh_sftp_loglevel }} -f LOCAL6
-
-# User/group-sepcific configuration
-# These lines must appear at the *end* of sshd_config
-#Match Group sftponly
-# Restrict members of the 'sftponly' group to SFTP subsystem,
-#ForceCommand internal-sftp -l INFO -f LOCAL6
-# Chroot members of the 'sftponly' group to their home directory
-#ChrootDirectory %h
-#AllowTcpForwarding no
-#AllowAgentForwarding no
+#AllowAgentForwarding yes
+#AllowTcpForwarding yes
 #GatewayPorts no
-#X11Forwarding no
+X11Forwarding no
+#X11DisplayOffset 10
+#X11UseLocalhost yes
+#PermitTTY yes
+PrintMotd no
+#PrintLastLog yes
+#TCPKeepAlive yes
+#PermitUserEnvironment no
+#Compression delayed
+#ClientAliveInterval 0
+#ClientAliveCountMax 3
+#UseDNS no
+#PidFile /var/run/sshd.pid
+#MaxStartups 10:30:100
+#PermitTunnel no
+#ChrootDirectory none
+#VersionAddendum none
 
+# no default banner path
+#Banner none
+
+# Allow client to pass locale environment variables
+AcceptEnv LANG LC_*
+
+# override default of no subsystems
+Subsystem	sftp	/usr/lib/openssh/sftp-server
+
+# Example of overriding settings on a per-user basis
+#Match User anoncvs
+#	X11Forwarding no
+#	AllowTcpForwarding no
+#	PermitTTY no
+#	ForceCommand cvs server
