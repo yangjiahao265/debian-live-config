@@ -3,10 +3,10 @@
 #Description: meld
 ##Description: gource
 git
-meld
-colordiff
-dwdiff
-cloc
+#Alt: meld
+#Alt: colordiff
+#Alt: dwdiff
+#Alt: cloc
 #Alt: gitg
 #Alt: gource
 #Alt: fossil
@@ -65,8 +65,8 @@ tmux
 
 #Section: Parsers/converters/documentation generators
 jq
-groff
-dos2unix
+#Alt: groff
+#Alt: dos2unix
 #Alt: aha
 #Alt: xmlstarlet
 #Alt: pandoc
@@ -82,7 +82,7 @@ dos2unix
 #reserialize # sid only
 
 #Section: Packaging
-build-essential
+#Alt: build-essential
 checkinstall
 fakeroot
 debconf-utils

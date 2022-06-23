@@ -5,7 +5,7 @@
 #Alt: firefox-esr
 #Alt: firefox-esr-l10n-fr
 #pkg-mozilla-archive-keyring # buster only
-webext-ublock-origin
+#Alt: webext-ublock-origin
 #Alt: webext-https-everywhere
 #Alt: midori
 #Alt: luakit
@@ -73,7 +73,7 @@ chromium
 #Description: nextcloud-desktop
 #Alt: nextcloud-desktop
 #Alt: nextcloud-desktop-cmd
-rsync
+#Alt: rsync
 #Alt: lftp
 #Alt: unison-gtk
 #Alt: rclone

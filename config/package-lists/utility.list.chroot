@@ -233,9 +233,9 @@ gnome-terminal
 #Section: Desktop configuration utilities
 # xfce4-settings
 gnome-system-tools
-menulibre
+#Alt: menulibre
 #gconf-editor # buster only
-dconf-editor
+#Alt: dconf-editor
 dconf-cli
 #qt4-qtconfig # buster only
 dconf-gsettings-backend
