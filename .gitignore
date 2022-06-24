@@ -55,5 +55,6 @@ live-image-amd64.*
 chroot.installed_tmp_pkgs
 
 chroot.tmp
-
+config/includes.chroot/opt/csrd-cloud
+config/includes.chroot/var/lib/docker
 # !config/package-lists/network.list.chroot
