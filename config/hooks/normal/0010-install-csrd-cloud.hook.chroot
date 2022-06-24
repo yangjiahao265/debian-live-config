@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -e
+
+# docker ps
+
+# containerd &
+# /usr/bin/dockerd -H tcp://127.0.0.1:2375 --containerd=/run/containerd/containerd.sock &
+
+# # ps -ef | grep docker
+# docker -H tcp://127.0.0.1:2375 info
+# # docker ps
+
+# exit 1
+
+# docker stats --no-stream
+
+# /opt/csrd-cloud/csrd.sh pull
