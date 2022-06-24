@@ -14,11 +14,9 @@ clean_all: clean
 
 download_extra: # clean
 	mkdir -p cache/downloads/ config/includes.chroot/opt/csrd-cloud config/includes.chroot/var/lib/docker
-	if [ -d deployment ]; then
-		git pull deployment
-		./deployment/csrd.sh pull
-		cp -r deployment/* config/includes.chroot/opt/csrd-cloud/
-	fi
+	cd deployment && git pull
+	./deployment/csrd.sh pull
+	cp -r deployment/* config/includes.chroot/opt/csrd-cloud/
 	cp -r /var/lib/docker/image config/includes.chroot/var/lib/docker
 	cp -r /var/lib/docker/overlay2 config/includes.chroot/var/lib/docker
 

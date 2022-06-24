@@ -151,7 +151,7 @@ wget
 
 #Section: Network management
 #Description: network-manager-gnome
-network-manager-gnome
+#Alt: network-manager-gnome
 #Alt: network-manager-openvpn-gnome
 #Alt: dnsmasq-base
 hostname
@@ -210,7 +210,7 @@ iptables
 
 #Section: Network diagnostic/monitoring
 #Description: gnome-nettool
-gnome-nettool
+#Alt: gnome-nettool
 traceroute
 dnsutils
 #Alt: dnsmasq

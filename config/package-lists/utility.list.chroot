@@ -205,9 +205,9 @@ vim
 #Description: xfce4-terminal
 #Alt: xfce4-terminal
 #Alt: lxterminal
-gnome-terminal
+#Alt: gnome-terminal
 #Alt: guake#
-#Alt: terminator
+terminator
 #Alt: rxvt-unicode
 #Alt: tilda
 
@@ -232,7 +232,7 @@ gnome-terminal
 
 #Section: Desktop configuration utilities
 # xfce4-settings
-gnome-system-tools
+#Alt: gnome-system-tools
 #Alt: menulibre
 #gconf-editor # buster only
 #Alt: dconf-editor
@@ -294,10 +294,10 @@ acpi-support-base
 
 #Section: Resources
 desktop-base
-papirus-icon-theme
-arc-theme
-gnome-themes-standard
-sound-theme-freedesktop
+#Alt: papirus-icon-theme
+#Alt: arc-theme
+#Alt: gnome-themes-standard
+#Alt: sound-theme-freedesktop
 #Alt: gnome-audio
 #Alt: qt5-gtk-platformtheme
 #Alt: faenza-icon-theme

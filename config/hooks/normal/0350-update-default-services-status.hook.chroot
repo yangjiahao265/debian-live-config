@@ -2,7 +2,7 @@
 echo "I: running $0"
 
 disabled_services="avahi-daemon openvpn rsync nmbd smbd libvirtd libvirt-guests"
-enabled_services="bumblebeed cups-browsed bluetooth cups fancontrol laptop-mode ntp plymouth preload smartmontools rsyslog lm-sensors hddtemp haveged ssh docker cron"
+enabled_services="bumblebeed cups-browsed bluetooth cups fancontrol laptop-mode ntp plymouth preload smartmontools rsyslog lm-sensors hddtemp haveged ssh docker cron getty@tty1"
 
 for service in $disabled_services; do
 	echo "Disabling $service"
