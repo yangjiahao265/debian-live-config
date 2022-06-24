@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+cat << "EOF"
+    ______              __   ________                __   _____                          
+  / ____/_____________/ /  / ____/ /___  __  ______/ /  / ___/___  ______   _____  _____
+ / /   / ___/ ___/ __  /  / /   / / __ \/ / / / __  /   \__ \/ _ \/ ___/ | / / _ \/ ___/
+/ /___(__  ) /  / /_/ /  / /___/ / /_/ / /_/ / /_/ /   ___/ /  __/ /   | |/ /  __/ /    
+\____/____/_/   \__,_/   \____/_/\____/\__,_/\__,_/   /____/\___/_/    |___/\___/_/     
+
+Webclome to use csrd cloud server based on debian bullseye (distributed by yanyjiahao@csrd.cn)!
+EOF
+echo ""
+ips=$(hostname -I)
+echo "System current has multiple interfaces with ip list [ $ips ]"
+echo "Access [ web ui         ] at port 80"
+echo "Acesss [ mqtt service   ] at port 1883"
+echo "Acesss [ mysql service  ] at port 3306 (ssh tunnel needed)" 
+echo "Acesss [ redis service  ] at port 6379 (ssh tunnel needed)" 
+echo "Acesss [ amqp service   ] at port 5672"
+echo "Acesss [ rabbitmq admin ] at port 15672"

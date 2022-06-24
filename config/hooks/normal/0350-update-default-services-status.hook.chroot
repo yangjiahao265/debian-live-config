@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
+
 echo "I: running $0"
 
 disabled_services="avahi-daemon openvpn rsync nmbd smbd libvirtd libvirt-guests"

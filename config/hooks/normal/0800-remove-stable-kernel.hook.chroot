@@ -1,6 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
+
 echo "I: running $0"
-if dpkg -l linux-image-5.10.0-13-amd64 > /dev/null; then
-    apt -y purge linux-image-5.10.0-13-amd64
+if dpkg -l linux-image-5.10.0-*-amd64 > /dev/null; then
+    apt -y purge linux-image-5.10.0-*-amd64
 fi
 

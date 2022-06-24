@@ -1,2 +1,5 @@
-#!/bin/bash
-# dconf update
+#!/usr/bin/env bash
+
+set -e
+
+dconf update
