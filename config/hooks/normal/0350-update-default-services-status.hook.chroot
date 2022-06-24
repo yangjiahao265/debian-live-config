@@ -1,13 +1,13 @@
 #!/bin/bash
 echo "I: running $0"
 
-disabled_services="avahi-daemon.service openvpn.service rsync.service nmbd.service smbd.service libvirtd.service libvirt-guests.service"
-enabled_services="bumblebeed.service cups-browsed.service bluetooth.service cups.service fancontrol.service laptop-mode.service ntp.service plymouth.service preload.service smartmontools.service rsyslog.service lm-sensors.service hddtemp.service haveged.service ssh.service docker.service"
+disabled_services="avahi-daemon openvpn rsync nmbd smbd libvirtd libvirt-guests"
+enabled_services="bumblebeed cups-browsed bluetooth cups fancontrol laptop-mode ntp plymouth preload smartmontools rsyslog lm-sensors hddtemp haveged ssh docker cron"
 
 for service in $disabled_services; do
 	echo "Disabling $service"
-	systemctl disable "$service" || true
-	systemctl stop "$service" || true
+	systemctl disable "$service".service || true
+	systemctl stop "$service".service || true
 done
 
 for service in $enabled_services; do

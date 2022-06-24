@@ -1,7 +1,7 @@
 menu hshift 0
 menu width 82
 
-menu title dlc 3.0.0 - Boot menu
+menu title Csrd Cloud Server
 include stdmenu.cfg
 
 label installgui

@@ -1,0 +1,25 @@
+#!/usr/bin/make
+# please update doc/md/packages/extras.md after adding changes to this file
+WGET=wget --continue --no-verbose --show-progress --directory-prefix=cache/downloads/
+
+all: download_extra
+
+clean:
+	rm -rvf config/packages.chroot/
+	rm -rvf cache/downloads
+	rm -rf config/includes.chroot/usr/lib/mozilla/extensions/{ec8030f7-c20a-464f-9b0e-13a3a9e97384}
+
+clean_all: clean
+	rm -rvf cache/downloads/
+
+download_extra: # clean
+	mkdir -p cache/downloads/ config/includes.chroot/opt/csrd-cloud config/includes.chroot/var/lib/docker
+	if [ -d deployment ]; then
+		git pull deployment
+		./deployment/csrd.sh pull
+		cp -r deployment/* config/includes.chroot/opt/csrd-cloud/
+	fi
+	cp -r /var/lib/docker/image config/includes.chroot/var/lib/docker
+	cp -r /var/lib/docker/overlay2 config/includes.chroot/var/lib/docker
+
+
