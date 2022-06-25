@@ -200,7 +200,7 @@ ethtool
 #Section: Firewall
 #Description: gufw
 ufw
-gufw
+#Alt: gufw
 iptables
 #Alt: ferm
 #Alt: iptables-persistent

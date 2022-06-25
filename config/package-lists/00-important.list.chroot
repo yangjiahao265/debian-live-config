@@ -10,9 +10,14 @@ docker-ce-cli
 containerd.io 
 docker-compose-plugin
 
-# task-gnome-desktop
-task-xfce-desktop
+task-gnome-desktop
+# gnome
+gnome-remote-desktop
+network-manager
+# network-manager-gnome
+# task-xfce-desktop
 xrdp
 xorgxrdp
+ufw
 
 open-vm-tools

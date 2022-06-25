@@ -1,1 +1,1 @@
-@reboot /opt/csrd-cloud/csrd.sh
+@reboot root /opt/csrd-cloud/csrd.sh >> /var/log/csrd.log 2>&1

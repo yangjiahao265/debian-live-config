@@ -13,11 +13,14 @@ clean_all: clean
 	rm -rvf cache/downloads/
 
 download_extra: # clean
-	mkdir -p cache/downloads/ config/includes.chroot/opt/csrd-cloud config/includes.chroot/var/lib/docker
+	mkdir -p cache/downloads/ config/includes.chroot/opt/csrd-cloud/images
 	cd deployment && git pull
 	./deployment/csrd.sh pull
 	cp -r deployment/* config/includes.chroot/opt/csrd-cloud/
-	cp -r /var/lib/docker/image config/includes.chroot/var/lib/docker
-	cp -r /var/lib/docker/overlay2 config/includes.chroot/var/lib/docker
+	./export.sh
+	# docker save $(docker image ls -q) -o config/includes.chroot/opt/csrd-cloud/images/data.tar
+	# docker save $(docker image ls --format={{.Repository}}:{{.Tag}}) -o config/includes.chroot/opt/csrd-cloud/images/data.tar
+	# cp -r /var/lib/docker/image config/includes.chroot/var/lib/docker
+	# cp -r /var/lib/docker/overlay2 config/includes.chroot/var/lib/docker
 
 

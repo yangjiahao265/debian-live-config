@@ -3,4 +3,7 @@
 set -e
 
 echo "I: running $0"
-apt-get -y purge exim4-base nfs-common rpcbind qemu-system-x86 qemu-system-data qemu-system-common avahi-daemon firefox-esr gnome-contacts
+apt-get -y purge exim4-base nfs-common rpcbind \
+    qemu-system-x86 qemu-system-data qemu-system-common \
+    avahi-daemon firefox-esr gnome-contacts gnome-online-miners gnome-user-docs gnome-user-share \
+    packagekit gnome-terminal gnome-calculator gnome-characters gnome-font-viewer gnome-online-accounts
