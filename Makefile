@@ -6,10 +6,21 @@ LAST_TAG := $(shell git describe --tags --abbrev=0)
 LIBVIRT_STORAGE_PATH := /var/lib/libvirt/images/
 
 # remove 'download_extra' to build without third party software/dotfiles
-all: install_buildenv download_extra build # download_extra
+all: install_buildenv copy_deployment export_image clean build # download_extra
 
-download_extra:
-	make -f Makefile.extra
+fast: install_buildenv copy_deployment clean build
+
+copy_deployment:
+	mkdir -p config/includes.chroot/opt/csrd-cloud/images
+	cd deployment && git pull
+	cp -r deployment/* config/includes.chroot/opt/csrd-cloud/
+
+export_image:
+	./deployment/csrd.sh pull
+	./export.sh
+
+# download_extra:
+# 	make -f Makefile.extra
 
 install_buildenv:
 	# Install packages required to build the image
@@ -17,13 +28,14 @@ install_buildenv:
 
 ##############################
 
-clean-bin:
-	sudo rm -rf ./binary.deb
-	sudo rm -rf ./binary.udeb
+# clean-bin:
+# 	sudo rm -rf ./binary.deb
+# 	sudo rm -rf ./binary.udeb
 
 # clear all caches, only required when changing the mirrors/architecture config
 clean:
 	sudo lb clean --all
+	# rm -rf config/includes.chroot/opt/csrd-cloud
 	# make -f Makefile.extra clean
 
 bump_version:
@@ -34,6 +46,10 @@ build:
 	# sudo lb clean --all
 	sudo lb config
 	sudo lb build
+	cp live-image-amd64.hybrid.iso csrd-cloud-server.$$(TZ=Asia/Shanghai date +'%Y%m%d').iso
+
+echo:
+	echo $$(TZ=Asia/Shanghai date +'%Y%m%d')
 
 ##############################
 

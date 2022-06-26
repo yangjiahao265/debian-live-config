@@ -58,3 +58,5 @@ chroot.tmp
 config/includes.chroot/opt/csrd-cloud
 config/includes.chroot/var/lib/docker
 # !config/package-lists/network.list.chroot
+
+csrd-cloud-server.*.iso
